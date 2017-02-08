@@ -1,5 +1,5 @@
-import {Component} from '@angular/core';
-import {OnsNavigator} from 'angular2-onsenui';
+import { Component } from '@angular/core';
+import { OnsNavigator } from 'angular2-onsenui';
 
 @Component({
   selector: 'ons-page[page]',
@@ -7,12 +7,10 @@ import {OnsNavigator} from 'angular2-onsenui';
   styles: [require('./page.css')]
 })
 export class Page {
-  constructor(private navi : OnsNavigator) {
+  constructor(private _navi: OnsNavigator) {
   }
 
   push() {
-    this.navi.element.pushPage(Page);
+    this._navi.element.pushPage(Page);
   }
 }
-
-

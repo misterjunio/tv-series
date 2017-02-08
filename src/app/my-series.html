@@ -1,0 +1,8 @@
+<div class="container">
+  <ons-list>
+    <ons-list-header>My saved series</ons-list-header>
+    <ons-list-item tappable modifier="chevron" *ngFor="let series of seriesList" (click)="push(series)">
+    </ons-list-item>
+  </ons-list>
+  <ons-bottom-toolbar>{{ seriesList.length }} series</ons-bottom-toolbar>
+</div>

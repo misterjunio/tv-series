@@ -1,13 +1,15 @@
-import {Component, ViewChild} from '@angular/core';
-import {OnsSplitterContent, OnsSplitterSide} from 'angular2-onsenui';
+import { Component, ViewChild } from '@angular/core';
+import { OnsSplitterContent, OnsSplitterSide } from 'angular2-onsenui';
 
-import {Page} from './page';
+import { MySeries } from './my-series';
+import { Page } from './page';
 
 @Component({
   selector: 'app',
   template: require('./app.html'),
   styles: [require('./app.css')]
 })
-export class MyApp {
+export class SeriesApp {
   page = Page;
+  seriesList = MySeries;
 }
