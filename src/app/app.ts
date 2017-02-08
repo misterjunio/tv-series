@@ -2,7 +2,7 @@ import { Component, ViewChild } from '@angular/core';
 import { OnsSplitterContent, OnsSplitterSide } from 'angular2-onsenui';
 
 import { MySeries } from './my-series';
-import { Page } from './page';
+import { SeriesPage } from './series-page';
 
 @Component({
   selector: 'app',
@@ -10,6 +10,6 @@ import { Page } from './page';
   styles: [require('./app.css')]
 })
 export class SeriesApp {
-  page = Page;
+  page = SeriesPage;
   seriesList = MySeries;
 }

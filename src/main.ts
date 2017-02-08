@@ -10,7 +10,9 @@ import { OnsenModule } from 'angular2-onsenui';
 
 import { SeriesApp } from './app/app';
 import { MySeries } from './app/my-series';
-import { Page } from './app/page';
+import { SeriesPage } from './app/series-page';
+import { SeriesService } from './app/series-service';
+import { SavedSeriesService } from './app/saved-series-service';
 
 // Enable production mode when in production mode.
 if (process.env.NODE_ENV === 'production') {
@@ -25,10 +27,15 @@ if (process.env.NODE_ENV === 'production') {
     declarations: [
         SeriesApp,
         MySeries,
-        Page
+        SeriesPage
     ],
     entryComponents: [
-        MySeries
+        MySeries,
+        SeriesPage
+    ],
+    providers: [
+        SeriesService,
+        SavedSeriesService
     ],
     bootstrap: [
         SeriesApp

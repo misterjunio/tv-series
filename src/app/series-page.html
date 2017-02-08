@@ -1,0 +1,31 @@
+<ons-toolbar>
+  <div class="left">
+    <ons-back-button>Back</ons-back-button>
+  </div>
+  <div class="center">{{ series.name }}</div>
+</ons-toolbar>
+
+<div class="content">
+  <img class="sprite" src="{{ series.image }}">
+
+  <div class="progress" *ngIf="!loaded">
+    <ons-progress-circular indeterminate>
+    </ons-progress-circular>
+  </div>
+
+  <div class="info" *ngIf="loaded">
+    <div class="summary" [innerHTML]="series.summary">
+    </div>
+  </div>
+</div>
+
+<ons-bottom-toolbar>
+  <div class="saved">
+    <div class="saved-label">
+      Save
+    </div>
+    <div class="saved-checkbox">
+      <ons-input type="checkbox" (change)="onSave($event, series)" [checked]="savedSeries.has(series.id)"></ons-input>
+    </div>
+  </div>
+</ons-bottom-toolbar>

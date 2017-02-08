@@ -4,4 +4,10 @@
 
 ons-bottom-toolbar {
   padding: 10px;
+  position: fixed;
+}
+
+#series-icon {
+  width: 30px;
+  height: 40px;
 }
