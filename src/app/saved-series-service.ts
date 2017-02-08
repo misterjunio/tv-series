@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 
+import {Series} from './series';
+
 @Injectable()
 export class SavedSeriesService {
     constructor() {
@@ -14,20 +16,24 @@ export class SavedSeriesService {
         window.localStorage.setItem('saved-series', json);
     }
 
-    saved: Set<number> = new Set<number>();
+    saved: Set<Series> = new Set<Series>();
 
-    add(id: number) {
-        this.saved.add(id);
+    add(series: Series) {
+        this.saved.add(series);
         this.update();
     }
 
-    remove(id: number) {
-        this.saved.delete(id);
+    remove(series: Series) {
+        this.saved.delete(series);
         this.update();
     }
 
-    has(id): boolean {
-        return this.saved.has(id);
+    has(series): boolean {
+        return this.saved.has(series);
+    }
+
+    getAll(): Series[] {
+        return Array.from(this.saved);
     }
 
     get count(): number {

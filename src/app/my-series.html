@@ -11,9 +11,12 @@
         {{ series.name }}
     </ons-list-item>
   </ons-list>
-  <ons-button modifier="large quiet" (disabled)="isLoading" (click)="loadMore()">
+  <ons-button modifier="large quiet" *ngIf="isLoading">
+      <span>Loading...</span>
+  </ons-button>
+  <!--<ons-button modifier="large quiet" (disabled)="isLoading" (click)="loadMore()">
       <span [hidden]="isLoading">Load more</span>
       <span [hidden]="!isLoading">Loading...</span>
-  </ons-button>
+  </ons-button>-->
 </div>
-<ons-bottom-toolbar>{{ seriesList.count }} series</ons-bottom-toolbar>
+<ons-bottom-toolbar>{{ savedSeries.count }} series</ons-bottom-toolbar>

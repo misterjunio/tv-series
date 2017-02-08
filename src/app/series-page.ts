@@ -19,18 +19,15 @@ export class SeriesPage {
     private params: Params,
     private savedSeries: SavedSeriesService
   ) {
-    /**
-     * Get the series that was pushed.
-     */
     let tmp: any = params.data;
     this.series = tmp;
   }
 
-  onSave(e, show) {
-    if (e.target.checked) {
-      this.savedSeries.add(show.id);
+  onSave(event, series) {
+    if (event.target.checked) {
+      this.savedSeries.add(series);
     } else {
-      this.savedSeries.remove(show.id);
+      this.savedSeries.remove(series);
     }
   }
 

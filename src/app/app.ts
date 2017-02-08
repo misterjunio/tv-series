@@ -6,8 +6,7 @@ import { SeriesPage } from './series-page';
 
 @Component({
   selector: 'app',
-  template: require('./app.html'),
-  styles: [require('./app.css')]
+  template: require('./app.html')
 })
 export class SeriesApp {
   page = SeriesPage;

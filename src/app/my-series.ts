@@ -15,10 +15,9 @@ export class MySeries {
   seriesList: Series[] = [];
   page: number = 0;
   isLoading: boolean = false;
-  error: boolean = false;
 
   constructor(
-    private seriesService: SeriesService,
+    private series: SeriesService,
     private savedSeries: SavedSeriesService,
     private _navi: OnsNavigator) { }
 
@@ -28,8 +27,10 @@ export class MySeries {
     }
 
     this.isLoading = true;
+    this.seriesList = this.savedSeries.getAll();
+    this.isLoading = false;
 
-    this.seriesService.getShows(this.page)
+    /*this.series.getShows(this.page)
       .then(shows => {
         this.seriesList = this.seriesList.concat(shows);
         this.page += 1;
@@ -39,7 +40,7 @@ export class MySeries {
       .catch((error) => {
         this.error = true;
         this.isLoading = false;
-      });
+      });*/
   }
 
   push(series: Series) {
