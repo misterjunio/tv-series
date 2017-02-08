@@ -27,18 +27,6 @@ export class MySeries {
     this.isLoading = true;
     this.seriesList = this.savedSeries.getAll();
     this.isLoading = false;
-
-    /*this.series.getShows(this.page)
-      .then(shows => {
-        this.seriesList = this.seriesList.concat(shows);
-        this.page += 1;
-        this.isLoading = false;
-        this.error = false;
-      })
-      .catch((error) => {
-        this.error = true;
-        this.isLoading = false;
-      });*/
   }
 
   push(series: Series) {

@@ -8,7 +8,12 @@
       <div class="left">
           <img id="series-icon" src="{{ series.image }}">
       </div>
-        {{ series.name }}
+      <div class="center">
+          {{ series.name }}
+      </div>
+      <div class="right">
+          <img id="star" src="/images/star.png" *ngIf="savedSeries.has(series)">
+      </div>
     </ons-list-item>
   </ons-list>
   <ons-button modifier="large quiet" (disabled)="isLoading" (click)="loadMore()">

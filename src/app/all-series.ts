@@ -4,6 +4,7 @@ import { OnsNavigator } from 'angular2-onsenui';
 import { SeriesPage } from './series-page';
 import { Series } from './series';
 import { SeriesService } from './series-service';
+import { SavedSeriesService } from './saved-series-service';
 
 @Component({
   selector: 'ons-page[all-series]',
@@ -18,6 +19,7 @@ export class AllSeries {
 
   constructor(
     private series: SeriesService,
+    private savedSeries: SavedSeriesService,
     private _navi: OnsNavigator) { }
 
   ngOnInit() {
