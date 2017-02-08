@@ -3,7 +3,7 @@
 </ons-toolbar>
 <div class="container">
   <ons-list>
-    <ons-list-header>My saved series</ons-list-header>
+    <ons-list-header>All series</ons-list-header>
     <ons-list-item tappable modifier="chevron" *ngFor="let series of seriesList" (click)="push(series)">
       <div class="left">
           <img id="series-icon" src="{{ series.image }}">
@@ -11,8 +11,9 @@
         {{ series.name }}
     </ons-list-item>
   </ons-list>
-  <ons-button modifier="large quiet" *ngIf="isLoading">
-      <span>Loading...</span>
+  <ons-button modifier="large quiet" (disabled)="isLoading" (click)="loadMore()">
+      <span [hidden]="isLoading">Load more</span>
+      <span [hidden]="!isLoading">Loading...</span>
   </ons-button>
 </div>
-<ons-bottom-toolbar>{{ savedSeries.count }} series</ons-bottom-toolbar>
+<ons-bottom-toolbar>{{ seriesList.length }} series</ons-bottom-toolbar>

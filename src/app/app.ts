@@ -1,14 +1,11 @@
 import { Component, ViewChild } from '@angular/core';
-import { OnsSplitterContent, OnsSplitterSide } from 'angular2-onsenui';
 
-import { MySeries } from './my-series';
-import { SeriesPage } from './series-page';
+import { AppTabbar } from './tabbar';
 
 @Component({
   selector: 'app',
   template: require('./app.html')
 })
 export class SeriesApp {
-  page = SeriesPage;
-  seriesList = MySeries;
+  tabbar = AppTabbar;
 }

@@ -9,7 +9,9 @@ import { HttpModule } from '@angular/http';
 import { OnsenModule } from 'angular2-onsenui';
 
 import { SeriesApp } from './app/app';
+import { AppTabbar } from './app/tabbar';
 import { MySeries } from './app/my-series';
+import { AllSeries } from './app/all-series';
 import { SeriesPage } from './app/series-page';
 import { SeriesService } from './app/series-service';
 import { SavedSeriesService } from './app/saved-series-service';
@@ -26,11 +28,15 @@ if (process.env.NODE_ENV === 'production') {
     ],
     declarations: [
         SeriesApp,
+        AppTabbar,
         MySeries,
+        AllSeries,
         SeriesPage
     ],
     entryComponents: [
+        AppTabbar,
         MySeries,
+        AllSeries,
         SeriesPage
     ],
     providers: [
