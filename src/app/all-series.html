@@ -1,24 +1,35 @@
-<ons-toolbar>
-  <div class="center">TV Series</div>
-</ons-toolbar>
 <div class="container">
+  <ons-input modifier="underbar" placeholder="Search series by name" #searchBox id="search-box" (keyup)="search(searchBox.value)"></ons-input>
+  <ons-list>
+    <ons-list-item tappable modifier="chevron" *ngFor="let series of searchList | async" (click)="push(series)">
+      <div class="left">
+        <img id="series-icon" src="{{ series.picture }}">
+      </div>
+      <div class="center">
+        {{ series.name }}
+      </div>
+      <div class="right">
+        <img id="star" src="/images/star.png" *ngIf="savedSeries.has(series.id)">
+      </div>
+    </ons-list-item>
+  </ons-list>
   <ons-list>
     <ons-list-header>All series</ons-list-header>
     <ons-list-item tappable modifier="chevron" *ngFor="let series of seriesList" (click)="push(series)">
       <div class="left">
-          <img id="series-icon" src="{{ series.image }}">
+        <img id="series-icon" src="{{ series.picture }}">
       </div>
       <div class="center">
-          {{ series.name }}
+        {{ series.name }}
       </div>
       <div class="right">
-          <img id="star" src="/images/star.png" *ngIf="savedSeries.has(series.id)">
+        <img id="star" src="/images/star.png" *ngIf="savedSeries.has(series.id)">
       </div>
     </ons-list-item>
   </ons-list>
   <ons-button modifier="large quiet" (disabled)="isLoading" (click)="loadMore()">
-      <span [hidden]="isLoading">Load more</span>
-      <span [hidden]="!isLoading">Loading...</span>
+    <span [hidden]="isLoading">Load more</span>
+    <span [hidden]="!isLoading">Loading...</span>
   </ons-button>
 </div>
 <ons-bottom-toolbar>{{ seriesList.length }} series</ons-bottom-toolbar>

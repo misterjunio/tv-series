@@ -5,7 +5,7 @@
   <div class="center" id="seriesTitle">{{ series.name }}</div>
 </ons-toolbar>
 <div class="content">
-  <img class="sprite" src="{{ series.image }}">
+  <img *ngIf="series.picture" class="sprite" src="{{ series.picture }}">
   <div class="progress" *ngIf="!loaded">
     <ons-progress-circular indeterminate>
     </ons-progress-circular>

@@ -2,9 +2,22 @@
   padding: 10px;
 }
 
-ons-bottom-toolbar {
-  padding: 10px;
-  position: fixed;
+#search-box {
+  width: 200px;
+  height: 20px;
+  margin: 10px;
+}
+
+.search-result {
+  border-bottom: 1px solid gray;
+  border-left: 1px solid gray;
+  border-right: 1px solid gray;
+  width:195px;
+  height: 20px;
+  padding: 5px;
+  background-color: white;
+  cursor: pointer;
+  margin: 10px;
 }
 
 #series-icon {
@@ -14,4 +27,9 @@ ons-bottom-toolbar {
 
 #star {
   width: 30px;
+}
+
+ons-bottom-toolbar {
+  padding: 10px;
+  position: fixed;
 }

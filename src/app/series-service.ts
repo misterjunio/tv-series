@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/toPromise';
 
-import {Series} from './series';
+import { Series } from './series';
 
 @Injectable()
 export class SeriesService {
@@ -15,12 +15,11 @@ export class SeriesService {
       .toPromise()
       .then(response => response.json())
       .then(items => items.map((item, idx) => {
-        const id: number = idx + 1 + page *　100;
         return {
-          name: item.name,
-          summary: item.summary,
-          image: item.image.medium,
-          id
+          name: item.name ? item.name : 'Name unavailable',
+          summary: item.summary ? item.summary : 'Summary unavailable',
+          picture: item.image ? (item.image.medium ? item.image.medium : item.image.original) : null,
+          id: item.id
         };
       }));
   }

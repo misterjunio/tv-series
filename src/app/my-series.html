@@ -1,12 +1,9 @@
-<ons-toolbar>
-  <div class="center">TV Series</div>
-</ons-toolbar>
 <div class="container">
   <ons-list>
     <ons-list-header>My saved series</ons-list-header>
     <ons-list-item tappable modifier="chevron" *ngFor="let series of seriesList" (click)="push(series)">
       <div class="left">
-          <img id="series-icon" src="{{ series.image }}">
+          <img id="series-icon" src="{{ series.picture }}">
       </div>
         {{ series.name }}
     </ons-list-item>

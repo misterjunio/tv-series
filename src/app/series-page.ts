@@ -10,7 +10,7 @@ import { SavedSeriesService } from './saved-series-service';
   template: require('./series-page.html'),
   styles: [require('./series-page.css')]
 })
-export class SeriesPage {
+export class SeriesPage implements OnInit {
   series: Series;
   loaded: boolean = false;
 

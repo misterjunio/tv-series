@@ -7,6 +7,7 @@ import { enableProdMode, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core'
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { HttpModule } from '@angular/http';
 import { OnsenModule } from 'angular2-onsenui';
+import './app/rxjs-extensions';
 
 import { SeriesApp } from './app/app';
 import { AppTabbar } from './app/tabbar';
@@ -15,6 +16,7 @@ import { AllSeries } from './app/all-series';
 import { SeriesPage } from './app/series-page';
 import { SeriesService } from './app/series-service';
 import { SavedSeriesService } from './app/saved-series-service';
+import { SeriesSearchService } from './app/series-search-service';
 
 // Enable production mode when in production mode.
 if (process.env.NODE_ENV === 'production') {
@@ -41,7 +43,8 @@ if (process.env.NODE_ENV === 'production') {
     ],
     providers: [
         SeriesService,
-        SavedSeriesService
+        SavedSeriesService,
+        SeriesSearchService
     ],
     bootstrap: [
         SeriesApp

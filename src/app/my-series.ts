@@ -10,7 +10,7 @@ import { SavedSeriesService } from './saved-series-service';
   template: require('./my-series.html'),
   styles: [require('./series.css')]
 })
-export class MySeries {
+export class MySeries implements OnInit {
   seriesList: Series[] = [];
   page: number = 0;
   isLoading: boolean = false;
