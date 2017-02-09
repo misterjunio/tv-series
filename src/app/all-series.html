@@ -12,7 +12,7 @@
           {{ series.name }}
       </div>
       <div class="right">
-          <img id="star" src="/images/star.png" *ngIf="savedSeries.has(series)">
+          <img id="star" src="/images/star.png" *ngIf="savedSeries.has(series.id)">
       </div>
     </ons-list-item>
   </ons-list>

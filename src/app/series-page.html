@@ -21,7 +21,7 @@
       Save
     </div>
     <div class="saved-checkbox">
-      <ons-input type="checkbox" (change)="onSave($event, series)" [checked]="savedSeries.has(series)"></ons-input>
+      <ons-input type="checkbox" (change)="onSave($event, series)" [checked]="savedSeries.has(series.id)"></ons-input>
     </div>
   </div>
 </ons-bottom-toolbar>
