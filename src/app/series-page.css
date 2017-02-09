@@ -1,10 +1,13 @@
+#seriesTitle {
+  overflow: hidden;
+}
+
 .sprite {
   width: 192px;
   height: 192px;
   margin: 2% auto;
   display: block;
   animation: 0.5s ease-in 0.4s jump;
-  margin-bottom: -10px;
 }
 
 .progress {
