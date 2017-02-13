@@ -6,6 +6,7 @@
 </ons-toolbar>
 <div class="content">
   <img *ngIf="series.picture" class="sprite" src="{{ series.picture }}">
+  <div *ngIf="!series.picture" class="sprite">Image unavailable</div>
   <div class="progress" *ngIf="!loaded">
     <ons-progress-circular indeterminate>
     </ons-progress-circular>

@@ -21,6 +21,7 @@ export class AllSeries implements OnInit {
   error: boolean = false;
   searchList: Observable<Series[]>;
   private searchTerms = new Subject<string>();
+  isSearching: boolean = false;
 
   constructor(
     private series: SeriesService,
@@ -36,7 +37,13 @@ export class AllSeries implements OnInit {
     this.searchList = this.searchTerms
       .debounceTime(300)
       .distinctUntilChanged()
-      .switchMap(term => term ? this.seriesSearch.searchSeries(term) : Observable.of<Series[]>([]))
+      .switchMap(term => {if (term) {
+        this.isSearching = true;
+        return this.seriesSearch.searchSeries(term);
+      } else {
+        this.isSearching = false;
+        return Observable.of<Series[]>([]);
+      } })
       .catch(error => {
         throw Error(error);
       });
