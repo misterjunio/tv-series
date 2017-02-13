@@ -74,4 +74,9 @@ export class AllSeries implements OnInit {
   push(series: Series) {
     this._navi.element.pushPage(SeriesPage, { data: series });
   }
+
+  clearSearch(inputBox : HTMLInputElement) {
+    inputBox.value = '';
+    this.search('');
+  }
 }
