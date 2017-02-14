@@ -1,12 +1,12 @@
 <div class="container">
-  <div id="search-div">
-    <ons-input modifier="underbar" placeholder="Search series by name" #searchBox id="search-box" (keyup)="search(searchBox.value)"></ons-input>
-    <ons-button modifier="light" id="clear-search" *ngIf="isSearching" (click)="clearSearch(searchBox)">X</ons-button>
+  <div class="search-div">
+    <ons-input modifier="underbar" placeholder="Search series by name" #searchBox class="search-box" (keyup)="search(searchBox.value)"></ons-input>
+    <ons-button modifier="light" class="clear-search" *ngIf="isSearching" (click)="clearSearch(searchBox)">X</ons-button>
   </div>
   <ons-list>
     <ons-list-item tappable modifier="chevron" *ngFor="let series of searchList | async" (click)="push(series)">
       <div class="left">
-        <img id="series-icon" src="{{ series.picture }}">
+        <img class="icons" src="{{ series.picture }}">
       </div>
       <div class="center">
         {{ series.name }}
@@ -21,7 +21,7 @@
       <ons-list-header>Browse all series</ons-list-header>
       <ons-list-item tappable modifier="chevron" *ngFor="let series of seriesList" (click)="push(series)">
         <div class="left">
-          <img id="series-icon" src="{{ series.picture }}">
+          <img class="icons" src="{{ series.picture }}">
         </div>
         <div class="center">
           {{ series.name }}
@@ -37,4 +37,4 @@
     </ons-button>
   </div>
 </div>
-<ons-bottom-toolbar>{{ seriesList.length }} series</ons-bottom-toolbar>
+<ons-bottom-toolbar *ngIf="!isSearching">{{ seriesList.length }} series</ons-bottom-toolbar>

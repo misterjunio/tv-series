@@ -13,7 +13,7 @@ export class SeriesService {
   getShows(page: number): Promise<Series> {
     return this.http.get(`${this.baseUrl}shows?page=${page}`)
       .toPromise()
-      .then(response => response.json())
+      .then(response => this._shuffle(response.json()))
       .then(items => items.map((item, idx) => {
         return {
           name: item.name ? item.name : 'Name unavailable',
@@ -22,5 +22,13 @@ export class SeriesService {
           id: item.id
         };
       }));
+  }
+
+  private _shuffle(a) {
+    for (let i = a.length; i; i--) {
+      let j = Math.floor(Math.random() * i);
+      [a[i - 1], a[j]] = [a[j], a[i - 1]];
+    }
+    return a;
   }
 }

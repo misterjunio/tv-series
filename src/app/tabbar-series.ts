@@ -1,14 +1,14 @@
-import { Component, ViewChild } from '@angular/core';
+import { Component } from '@angular/core';
 
 import { MySeries } from './my-series';
 import { AllSeries } from './all-series';
 import { SeriesPage } from './series-page';
 
 @Component({
-  selector: 'ons-page[tabbar]',
-  template: require('./tabbar.html')
+  selector: 'ons-page',
+  template: require('./tabbar-series.html')
 })
-export class AppTabbar {
+export class SeriesTabbar {
   seriesList = MySeries;
   allSeries = AllSeries;
   page = SeriesPage;

@@ -10,13 +10,20 @@ import { OnsenModule } from 'angular2-onsenui';
 import './app/rxjs-extensions';
 
 import { SeriesApp } from './app/app';
-import { AppTabbar } from './app/tabbar';
+import { Menu } from './app/menu';
+import { SeriesNavigator } from './app/navigator-series';
+import { SeriesTabbar } from './app/tabbar-series';
 import { MySeries } from './app/my-series';
 import { AllSeries } from './app/all-series';
 import { SeriesPage } from './app/series-page';
+import { PeopleNavigator } from './app/navigator-people';
+import { PeoplePage } from './app/people-page';
+import { SettingsPage } from './app/settings-page';
+
 import { SeriesService } from './app/series-service';
 import { SavedSeriesService } from './app/saved-series-service';
 import { SeriesSearchService } from './app/series-search-service';
+import { PeopleSearchService } from './app/people-search-service';
 
 // Enable production mode when in production mode.
 if (process.env.NODE_ENV === 'production') {
@@ -30,21 +37,32 @@ if (process.env.NODE_ENV === 'production') {
     ],
     declarations: [
         SeriesApp,
-        AppTabbar,
+        Menu,
+        SeriesNavigator,
+        SeriesTabbar,
         MySeries,
         AllSeries,
-        SeriesPage
+        SeriesPage,
+        PeopleNavigator,
+        PeoplePage,
+        SettingsPage
     ],
     entryComponents: [
-        AppTabbar,
+        Menu,
+        SeriesNavigator,
+        SeriesTabbar,
         MySeries,
         AllSeries,
-        SeriesPage
+        SeriesPage,
+        PeopleNavigator,
+        PeoplePage,
+        SettingsPage
     ],
     providers: [
         SeriesService,
         SavedSeriesService,
-        SeriesSearchService
+        SeriesSearchService,
+        PeopleSearchService
     ],
     bootstrap: [
         SeriesApp

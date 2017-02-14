@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="search-div">
+    <ons-input modifier="underbar" placeholder="Search people by name" #searchBox class="search-box" (keyup)="search(searchBox.value)"></ons-input>
+    <ons-button modifier="light" class="clear-search" *ngIf="isSearching" (click)="clearSearch(searchBox)">X</ons-button>
+  </div>
+  <ons-list>
+    <ons-list-item tappable modifier="chevron" *ngFor="let person of peopleList | async" (click)="push(person)">
+      <div class="left">
+        <img class="icons" src="{{ person.picture }}">
+      </div>
+      <div class="center">
+        {{ person.name }}
+      </div>
+    </ons-list-item>
+  </ons-list>
+</div>

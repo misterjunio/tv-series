@@ -1,0 +1,26 @@
+<ons-toolbar>
+  <div class="center">Menu</div>
+</ons-toolbar>
+<div class="background"></div>
+<div class="content">
+  <ons-list id="menu-items">
+    <ons-list-item tappable (click)="seriesApp.load('seriesNavigator')">
+      <div class="left">
+        <ons-input type="radio" name="categoryGroup" input-id="r-series" checked></ons-input>
+      </div>
+      <label class="center" for="r-series">Series</label>
+    </ons-list-item>
+    <ons-list-item tappable (click)="seriesApp.load('peoplePage')">
+      <div class="left">
+        <ons-input type="radio" name="categoryGroup" input-id="r-people"></ons-input>
+      </div>
+      <label class="center" for="r-people">People</label>
+    </ons-list-item>
+    <ons-list-item tappable (click)="seriesApp.load('settingsPage')">
+      <div class="left">
+        <ons-input type="radio" name="categoryGroup" input-id="r-settings"></ons-input>
+      </div>
+      <label class="center" for="r-settings">Settings</label>
+    </ons-list-item>
+  </ons-list>
+</div>
