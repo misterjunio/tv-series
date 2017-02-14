@@ -6,7 +6,7 @@ import { Series } from './series';
 import { SavedSeriesService } from './saved-series-service';
 
 @Component({
-  selector: 'ons-page',
+  selector: 'ons-page[my-series]',
   template: require('./my-series.html'),
   styles: [require('./series.css')]
 })

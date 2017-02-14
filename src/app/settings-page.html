@@ -1,1 +1,14 @@
-<h3>Settings page</h3>
+<ons-toolbar>
+  <div class="center">Settings</div>
+</ons-toolbar>
+<div class="background"></div>
+<div class="content">
+  <div class="all-margins">
+    <ons-select [(ngModel)]="myCountry" ngDefaultControl (ngModelChange)="switchCountry($event)">
+      <option *ngFor="let country of countries" [value]="country">
+        {{ country }}
+      </option>
+    </ons-select>
+    <p>I am from <strong>{{ myCountry }}</strong>.</p>
+  </div>
+</div>

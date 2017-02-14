@@ -3,17 +3,18 @@ import { OnsNavigator } from 'angular2-onsenui';
 import { Observable } from 'rxjs/Observable';
 import { Subject } from 'rxjs/Subject';
 
-import { People } from './people';
+import { Person } from './person';
+import { PersonPage } from './person-page';
 import { PeopleSearchService } from './people-search-service';
 
 @Component({
-  selector: 'ons-page',
+  selector: 'ons-page[people-page]',
   template: require('./people-page.html'),
   styles: [require('./series.css')]
 })
 export class PeoplePage implements OnInit {
   error: boolean = false;
-  peopleList: Observable<People[]>;
+  peopleList: Observable<Person[]>;
   private searchTerms = new Subject<string>();
 
   constructor(
@@ -28,11 +29,11 @@ export class PeoplePage implements OnInit {
     this.peopleList = this.searchTerms
       .debounceTime(300)
       .distinctUntilChanged()
-      .switchMap(term => term ? this.peopleSearch.searchPeople(term) : Observable.of<People[]>([]));
+      .switchMap(term => term ? this.peopleSearch.searchPeople(term) : Observable.of<Person[]>([]));
   }
 
-  push(people: People) {
-    this._navi.element.pushPage(PeoplePage, { data: people });
+  push(person: Person) {
+    this._navi.element.pushPage(PersonPage, { data: person });
   }
 
   clearSearch(inputBox: HTMLInputElement) {

@@ -3,7 +3,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs';
 import 'rxjs/add/operator/toPromise';
 
-import { People } from './people';
+import { Person } from './person';
 
 @Injectable()
 export class PeopleSearchService {
@@ -11,7 +11,7 @@ export class PeopleSearchService {
 
   constructor(private http: Http) { }
 
-  searchPeople(query: string): Observable<People[]> {
+  searchPeople(query: string): Observable<Person[]> {
     let ret = this.http.get(`${this.baseUrl}/search/people?q=${this._toQueryString(query)}`)
       .map(this._extractData)
       .catch(this._handleError);
@@ -23,7 +23,7 @@ export class PeopleSearchService {
   }
 
   private _extractData(res: Response) {
-    const peopleSearch: People[] = [];
+    const peopleSearch: Person[] = [];
     for (let item of res.json()) {
       peopleSearch.push({
         name: item.person.name ? item.person.name : 'Name unavailable',
@@ -31,7 +31,7 @@ export class PeopleSearchService {
         id: item.person.id
       })
     }
-    return peopleSearch as People[];
+    return peopleSearch as Person[];
   }
 
 

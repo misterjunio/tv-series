@@ -1,0 +1,10 @@
+<ons-toolbar>
+  <div class="left">
+    <ons-back-button>Back</ons-back-button>
+  </div>
+  <div class="center" id="personTitle">{{ person.name }}</div>
+</ons-toolbar>
+<div class="content">
+  <img *ngIf="person.picture" class="sprite" src="{{ person.picture }}">
+  <div *ngIf="!person.picture" class="sprite">Image unavailable</div>
+</div>

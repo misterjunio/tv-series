@@ -4,10 +4,9 @@ import { OnsSplitterContent } from 'angular2-onsenui';
 import { SeriesApp } from './app';
 
 @Component({
-  selector: 'ons-page',
+  selector: 'ons-page[menu]',
   template: require('./menu.html')
 })
 export class Menu {
-  constructor( @Inject(forwardRef(() => SeriesApp)) private seriesApp: SeriesApp) {
-  }
+  constructor( @Inject(forwardRef(() => SeriesApp)) private seriesApp: SeriesApp) { }
 }

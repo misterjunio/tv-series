@@ -5,7 +5,7 @@ import { AllSeries } from './all-series';
 import { SeriesPage } from './series-page';
 
 @Component({
-  selector: 'ons-page',
+  selector: 'ons-page[tabbar-series]',
   template: require('./tabbar-series.html')
 })
 export class SeriesTabbar {

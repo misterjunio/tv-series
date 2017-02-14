@@ -3,7 +3,7 @@ import { OnsSplitterContent, OnsSplitterSide } from 'angular2-onsenui';
 
 import { Menu } from './menu';
 import { SeriesNavigator } from './navigator-series';
-import { PeoplePage } from './people-page';
+import { PeopleNavigator } from './navigator-people';
 import { SettingsPage } from './settings-page';
 
 @Component({
@@ -17,7 +17,7 @@ export class SeriesApp {
   pages = {
     menu: Menu,
     seriesNavigator: SeriesNavigator,
-    peoplePage: PeoplePage,
+    peopleNavigator: PeopleNavigator,
     settingsPage: SettingsPage
   };
 

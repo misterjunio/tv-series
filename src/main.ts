@@ -6,6 +6,7 @@ require('onsenui/css/onsenui.css');
 import { enableProdMode, NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { HttpModule } from '@angular/http';
+import { FormsModule } from '@angular/forms';
 import { OnsenModule } from 'angular2-onsenui';
 import './app/rxjs-extensions';
 
@@ -18,6 +19,7 @@ import { AllSeries } from './app/all-series';
 import { SeriesPage } from './app/series-page';
 import { PeopleNavigator } from './app/navigator-people';
 import { PeoplePage } from './app/people-page';
+import { PersonPage } from './app/person-page';
 import { SettingsPage } from './app/settings-page';
 
 import { SeriesService } from './app/series-service';
@@ -33,7 +35,8 @@ if (process.env.NODE_ENV === 'production') {
 @NgModule({
     imports: [
         OnsenModule, // has BrowserModule internally
-        HttpModule
+        HttpModule,
+        FormsModule
     ],
     declarations: [
         SeriesApp,
@@ -45,6 +48,7 @@ if (process.env.NODE_ENV === 'production') {
         SeriesPage,
         PeopleNavigator,
         PeoplePage,
+        PersonPage,
         SettingsPage
     ],
     entryComponents: [
@@ -56,13 +60,14 @@ if (process.env.NODE_ENV === 'production') {
         SeriesPage,
         PeopleNavigator,
         PeoplePage,
+        PersonPage,
         SettingsPage
     ],
     providers: [
         SeriesService,
         SavedSeriesService,
         SeriesSearchService,
-        PeopleSearchService
+        PeopleSearchService,
     ],
     bootstrap: [
         SeriesApp
