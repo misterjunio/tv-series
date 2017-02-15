@@ -1,7 +1,7 @@
 {
-  "name": "onsenui-v2-angular2-navigation",
-  "version": "2.2.4+20170131.1",
-  "description": "",
+  "name": "tv-series",
+  "version": "1.0.0",
+  "description": "App for managing TV series info based on Angular and Onsen UI.",
   "dependencies": {
     "@angular/common": "2.4.3",
     "@angular/compiler": "2.4.3",
