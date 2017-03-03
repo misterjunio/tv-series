@@ -3,14 +3,14 @@ import { OnsNavigator } from 'angular2-onsenui';
 
 import { SeriesPage } from './series-page';
 import { Series } from './series';
-import { SavedSeriesService } from './saved-series-service';
+import { SavedSeriesService } from './series-saved-service';
 
 @Component({
-  selector: 'ons-page[my-series]',
-  template: require('./my-series.html'),
+  selector: 'ons-page[series-saved]',
+  template: require('./series-saved.html'),
   styles: [require('./series.css')]
 })
-export class MySeries implements OnInit {
+export class SavedSeries implements OnInit {
   seriesList: Series[] = [];
   page: number = 0;
   isLoading: boolean = false;

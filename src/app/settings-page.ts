@@ -12,12 +12,12 @@ export class SettingsPage implements OnInit {
 
   ngOnInit(): void {
     if (window.localStorage.getItem('saved-country')) {
-      this.myCountry = JSON.parse(window.localStorage.getItem('saved-country'));
+      this.myCountry = window.localStorage.getItem('saved-country');
     } else {
-      navigator.globalization.getLocaleName(
+      /*navigator.globalization.getLocaleName(
         function (locale) { alert('locale: ' + locale.value + '\n'); },
         function () { alert('Error getting locale\n'); }
-      );
+      );*/
     }
   }
 

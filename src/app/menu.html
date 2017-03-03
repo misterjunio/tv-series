@@ -4,19 +4,19 @@
 <div class="background"></div>
 <div class="content">
   <ons-list>
-    <ons-list-item tappable (click)="seriesApp.load('seriesNavigator')">
+    <ons-list-item tappable routerLink="series">
       <div class="left">
         <ons-input type="radio" name="menuItem" input-id="r-series" checked></ons-input>
       </div>
       <label class="center" for="r-series">Series</label>
     </ons-list-item>
-    <ons-list-item tappable (click)="seriesApp.load('peopleNavigator')">
+    <ons-list-item tappable routerLink="people">
       <div class="left">
         <ons-input type="radio" name="menuItem" input-id="r-people"></ons-input>
       </div>
       <label class="center" for="r-people">People</label>
     </ons-list-item>
-    <ons-list-item tappable (click)="seriesApp.load('settingsPage')">
+    <ons-list-item tappable routerLink="settings">
       <div class="left">
         <ons-input type="radio" name="menuItem" input-id="r-settings"></ons-input>
       </div>

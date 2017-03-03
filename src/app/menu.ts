@@ -8,5 +8,4 @@ import { SeriesApp } from './app';
   template: require('./menu.html')
 })
 export class Menu {
-  constructor( @Inject(forwardRef(() => SeriesApp)) private seriesApp: SeriesApp) { }
 }

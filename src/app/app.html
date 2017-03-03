@@ -1,8 +1,10 @@
 <ons-splitter>
+  <!--<ons-splitter-side [page]="pages.menu" width="250px" style="border-right: 1px solid #ccc" [attr.collapse]="'collapse'" [attr.swipeable]="'swipeable'">-->
   <!--<ons-splitter-side [page]="pages.menu" width="250px" style="border-right: 1px solid #ccc" collapse swipeable>-->
   <ons-splitter-side [page]="pages.menu" width="250px" style="border-right: 1px solid #ccc">
   </ons-splitter-side>
 
-  <ons-splitter-content [page]="pages.seriesNavigator">
+  <ons-splitter-content>
+    <router-outlet></router-outlet>
   </ons-splitter-content>
 </ons-splitter>

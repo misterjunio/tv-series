@@ -29,9 +29,6 @@ import * as _ from 'lodash'
  *
  */
 
-declare var require: any;
-declare var process: any;
-
 // Alias legacy import/exports pre rc
 declare module "angular2/core" {
   export * from '@angular/core';

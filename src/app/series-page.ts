@@ -3,7 +3,7 @@ import { OnsNavigator, Params } from 'angular2-onsenui';
 
 import { Series } from './series';
 import { SeriesService } from './series-service';
-import { SavedSeriesService } from './saved-series-service';
+import { SavedSeriesService } from './series-saved-service';
 
 @Component({
   selector: 'ons-page[series-page]',

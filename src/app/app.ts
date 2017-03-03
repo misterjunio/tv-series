@@ -2,8 +2,9 @@ import { Component, ViewChild } from '@angular/core';
 import { OnsSplitterContent, OnsSplitterSide } from 'angular2-onsenui';
 
 import { Menu } from './menu';
-import { SeriesNavigator } from './navigator-series';
-import { PeopleNavigator } from './navigator-people';
+import { SeriesNavigator } from './series-navigator';
+import { PeopleNavigator } from './people-navigator';
+import { PeoplePage } from './people-page';
 import { SettingsPage } from './settings-page';
 
 @Component({
@@ -17,7 +18,7 @@ export class SeriesApp {
   pages = {
     menu: Menu,
     seriesNavigator: SeriesNavigator,
-    peopleNavigator: PeopleNavigator,
+    peopleNavigator: PeoplePage,
     settingsPage: SettingsPage
   };
 

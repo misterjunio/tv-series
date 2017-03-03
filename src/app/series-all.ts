@@ -6,12 +6,12 @@ import { Subject } from 'rxjs/Subject';
 import { SeriesPage } from './series-page';
 import { Series } from './series';
 import { SeriesService } from './series-service';
-import { SavedSeriesService } from './saved-series-service';
+import { SavedSeriesService } from './series-saved-service';
 import { SeriesSearchService } from './series-search-service';
 
 @Component({
-  selector: 'ons-page[all-series]',
-  template: require('./all-series.html'),
+  selector: 'ons-page[series-all]',
+  template: require('./series-all.html'),
   styles: [require('./series.css')]
 })
 export class AllSeries implements OnInit {

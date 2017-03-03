@@ -10,20 +10,22 @@ import { FormsModule } from '@angular/forms';
 import { OnsenModule } from 'angular2-onsenui';
 import './app/rxjs-extensions';
 
+import { AppRoutingModule } from './app/routes';
+
 import { SeriesApp } from './app/app';
 import { Menu } from './app/menu';
-import { SeriesNavigator } from './app/navigator-series';
-import { SeriesTabbar } from './app/tabbar-series';
-import { MySeries } from './app/my-series';
-import { AllSeries } from './app/all-series';
+import { SeriesNavigator } from './app/series-navigator';
+import { SeriesTabbar } from './app/series-tabbar';
+import { SavedSeries } from './app/series-saved';
+import { AllSeries } from './app/series-all';
 import { SeriesPage } from './app/series-page';
-import { PeopleNavigator } from './app/navigator-people';
+import { PeopleNavigator } from './app/people-navigator';
 import { PeoplePage } from './app/people-page';
 import { PersonPage } from './app/person-page';
 import { SettingsPage } from './app/settings-page';
 
 import { SeriesService } from './app/series-service';
-import { SavedSeriesService } from './app/saved-series-service';
+import { SavedSeriesService } from './app/series-saved-service';
 import { SeriesSearchService } from './app/series-search-service';
 import { PeopleSearchService } from './app/people-search-service';
 
@@ -36,14 +38,15 @@ if (process.env.NODE_ENV === 'production') {
     imports: [
         OnsenModule, // has BrowserModule internally
         HttpModule,
-        FormsModule
+        FormsModule,
+        AppRoutingModule
     ],
     declarations: [
         SeriesApp,
         Menu,
         SeriesNavigator,
         SeriesTabbar,
-        MySeries,
+        SavedSeries,
         AllSeries,
         SeriesPage,
         PeopleNavigator,
@@ -55,7 +58,7 @@ if (process.env.NODE_ENV === 'production') {
         Menu,
         SeriesNavigator,
         SeriesTabbar,
-        MySeries,
+        SavedSeries,
         AllSeries,
         SeriesPage,
         PeopleNavigator,
